@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+.border {
+    max-width: 1200px;
+    color: #001E63;
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+.border:nth-child(1){
+    border-top: 1px solid rgb(212, 212, 212);
+}
+
+label {
+    padding: 20px;
+    font-family: "Roboto", system-ui, sans-serif;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+input[type="checkbox"], .extended{
+    display: none;
+}
+
+.info {
+    font-family: "Roboto", system-ui, sans-serif;
+    visibility: hidden;
+    height: 0px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+label:has(+input[type="checkbox"]:checked) .extended{
+    display: block;
+}
+
+label:has(+input[type="checkbox"]:checked) .closed{
+    display: none;
+}
+
+input[type=checkbox]:checked ~ .info {
+    animation: opacity .35s ease;
+    padding: 0px 20px 20px 20px;
+    height: fit-content;
+    visibility: visible;
+    opacity: 1;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+        max-height: 0px;
+    }
+    25% {
+        opacity: 0;
+        max-height: 20px;
+    }
+    50% {
+        opacity: 0;
+        max-height: 30px;
+    }
+    75% {
+        opacity: 0.2;
+        max-height: 40px;
+    }
+    100% {
+        opacity: 1;
+        max-height: fit-content;
+    }
+}
+
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.details-left {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 0.5fr 1fr;
+    align-items: center;
+}
+
+h3 {
+    margin: 10px 0px 0px 0px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.details-right {
+    padding-right: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.progressbar {
+    margin-left: 10px;
+    height: 15px;
+    width: 400px;
+    border-radius: 20px;
+    border: 1px solid #001E63;
+}
+
+.progressbar::-webkit-progress-value{
+    border-radius: 20px;
+    background-color: #001E63;
+}
+
+.progressbar::-webkit-progress-bar{
+    border-radius: 20px;
+    background-color: rgb(223, 221, 221);
+}
+
+.progressbar::-moz-progress-bar{
+    border-radius: 20px;
+    background-color: #001E63;
+}
+
+.pronation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.pronation div{
+    margin: auto;
+    padding-top: 40px;
+}
+
+.font-weight {
+    font-weight: 400;
+}
+
+.tech-features ul {
+    padding: 0;
+    font-weight: bold;
+    font-size: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    list-style: none;
+}
