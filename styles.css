@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
-.border {
+.dropdown-container {
     max-width: 1200px;
     color: #001E63;
     border-bottom: 1px solid rgb(212, 212, 212);
 }
 
-.border:nth-child(1){
+.dropdown-container:nth-child(1){
     border-top: 1px solid rgb(212, 212, 212);
 }
 
@@ -24,51 +24,21 @@ input[type="checkbox"], .extended{
     display: none;
 }
 
+.info-container {
+    padding-left: 20px;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms;
+}
+
 .info {
     font-family: "Roboto", system-ui, sans-serif;
-    visibility: hidden;
-    height: 0px;
     overflow: hidden;
-    opacity: 0;
 }
 
-label:has(+input[type="checkbox"]:checked) .extended{
-    display: block;
-}
-
-label:has(+input[type="checkbox"]:checked) .closed{
-    display: none;
-}
-
-input[type=checkbox]:checked ~ .info {
-    animation: opacity .35s ease;
+input[type=checkbox]:checked ~ .info-container {
     padding: 0px 20px 20px 20px;
-    height: fit-content;
-    visibility: visible;
-    opacity: 1;
-}
-
-@keyframes opacity {
-    0% {
-        opacity: 0;
-        max-height: 0px;
-    }
-    25% {
-        opacity: 0;
-        max-height: 20px;
-    }
-    50% {
-        opacity: 0;
-        max-height: 30px;
-    }
-    75% {
-        opacity: 0.2;
-        max-height: 40px;
-    }
-    100% {
-        opacity: 1;
-        max-height: fit-content;
-    }
+    grid-template-rows: 1fr;
 }
 
 .details {
